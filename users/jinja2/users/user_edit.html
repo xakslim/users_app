@@ -1,0 +1,122 @@
+{%- extends 'layouts/main.html' -%}
+
+{%- block PAGE_TITLE %} Пользователь {% endblock -%}
+
+{% block BODY_CLASSES %} user__card-page{% endblock -%}
+
+{%- block PAGE_CONTENT -%}
+    <div>
+        <form action="" method="post" novalidate>
+            {{- csrf_input -}}
+            <div class="card-header">
+                <div class="row">
+                    <div class="card-image col-2">
+                        <img src="{{ STATIC_URL }}img/logo.png" alt="">
+                    </div>
+
+                    <div class="card-description col-10">
+                        <div class="forms-fields">
+                            <div class="form__line">
+                                <span>Фамилия</span>
+                                {{ form.first_name }}
+                                {#                                <input class="form-input" type="text" name="name" placeholder="">#}
+                                <div class="form__err"></div>
+                            </div>
+                            <div class="form__line">
+                                <span>Имя</span>
+                                {{ form.last_name }}
+                                {#                                <input class="form-input" type="text" name="name" placeholder="">#}
+                                <div class="form__err"></div>
+                            </div>
+                            <div class="form__line">
+                                <span>Отчество</span>
+                                {{ form.middle_name }}
+                                {#                                <input class="form-input" type="text" name="name" placeholder="">#}
+                                <div class="form__err"></div>
+                            </div>
+                            <div class="form__line">
+                                <span>Организация</span>
+                                {{ form.entity }}
+                                {#                                <input class="form-input" type="text" name="name" placeholder="">#}
+                                <div class="form__err"></div>
+                            </div>
+                            <div class="form__line">
+                                <span>Категория</span>
+                                {{ form.category }}
+                                {#                                <input class="form-input" type="text" name="name" placeholder="">#}
+                                <div class="form__err"></div>
+                            </div>
+                            <div class="form__line">
+                                <span>Должность</span>
+                                {{ form.position }}
+                                {#                                <input class="form-input" type="text" name="name" placeholder="">#}
+                                <div class="form__err"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-info">
+                <div class="row">
+                    <div class="user-contacts col-6">
+                        <span class="title">Контакты</span>
+                        <div class="forms-fields">
+                            <div class="form__line">
+                                <span>Рабочий телефон</span>
+                                {{ form.work_phone }}
+                                {#                                <input class="form-input" type="text" name="name" placeholder="">#}
+                                <div class="form__err"></div>
+                            </div>
+                            <div class="form__line">
+                                <span>Мобильный телефон</span>
+                                {{ form.mobile_phone }}
+                                {#                                <input class="form-input" type="text" name="name" placeholder="">#}
+                                <div class="form__err"></div>
+                            </div>
+                            <div class="form__line">
+                                <span>Адрес электронной почты</span>
+                                {{ form.email }}
+                                {#                                <input class="form-input" type="text" name="name" placeholder="">#}
+                                <div class="form__err"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="user-login__info col-6">
+                        <span class="title">Учетная запись</span>
+                        <div class="forms-fields">
+                            <div class="form__line">
+                                <span>Роли пользователя</span>
+                                {{ form.role }}
+                                {#                                <input class="form-input" type="text" name="name" placeholder="">#}
+                                <div class="form__err"></div>
+                            </div>
+                            <div class="form__line">
+                                <span>Логин</span>
+                                {{ form.username }}
+                                {#                                <input class="form-input" type="text" name="name" placeholder="">#}
+                                <div class="form__err"></div>
+                            </div>
+                            <div class="form__line">
+                                <span>Пароль</span>
+{#                                {{ form.password }}#}
+{#                                {{ form.password1 }}#}
+{#                                <input class="form-input" type="text" name="password1" placeholder="">#}
+                                <div class="form__err"></div>
+                            </div>
+{#                            <div class="form__line">#}
+{#                                <span>Подтверждение пароля</span>#}
+{#                                {{ form.password2 }}#}
+{#                                <input class="form-input" type="text" name="password2" placeholder="">#}
+{#                                <div class="form__err"></div>#}
+{#                            </div>#}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="btn-submit" value="Save">
+        </form>
+    </div>
+
+{% endblock -%}
